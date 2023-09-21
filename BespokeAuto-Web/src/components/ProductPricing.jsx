@@ -33,19 +33,19 @@ const product = {
   ],
   images: [
     {
-      src: '../../public/IMG_9309.jpg',
+      src: '/IMG_9309.jpg',
       alt: 'Two each of gray, white, and black shirts laying flat.',
     },
     {
-      src: '../../public/IMG_9499.jpg',
+      src: '/IMG_9499.jpg',
       alt: 'Model wearing plain black basic tee.',
     },
     {
-      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg',
+      src: '/IMG_9500.jpg',
       alt: 'Model wearing plain gray basic tee.',
     },
     {
-      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg',
+      src: '/IMG_7706.PNG',
       alt: 'Model wearing plain white basic tee.',
     },
   ],
