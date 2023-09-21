@@ -16,6 +16,8 @@ function App() {
 
   return (
     <div>
+      <h1 className="mx-auto max-w-7xl mb-1 my-6 text-5xl font-extrabold text-black-900 dark:text-white md:text-5xl lg:text-6xl"><span className="text-transparent bg-clip-text bg-gradient-to-r to-black from-red-800">Bespoke Auto</span></h1>
+      <hr></hr>
       <ProductPricing />
     </div>
   );

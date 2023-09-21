@@ -20,12 +20,11 @@
   ```
 */
 import { useState } from 'react'
-import { StarIcon } from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
 
 const product = {
-  name: 'Basic Tee 6-Pack',
-  price: '$192',
+  name: 'Custom Grilles',
+  price: '$350',
   href: '#',
   breadcrumbs: [
     { id: 1, name: 'Men', href: '#' },
@@ -37,7 +36,7 @@ const product = {
       alt: 'Two each of gray, white, and black shirts laying flat.',
     },
     {
-      src: '/IMG_9499.jpg',
+      src: '/IMG_7706.PNG',
       alt: 'Model wearing plain black basic tee.',
     },
     {
@@ -45,7 +44,7 @@ const product = {
       alt: 'Model wearing plain gray basic tee.',
     },
     {
-      src: '/IMG_7706.PNG',
+      src: '/IMG_9499.jpg',
       alt: 'Model wearing plain white basic tee.',
     },
   ],
@@ -53,6 +52,7 @@ const product = {
     { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
     { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
     { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
+    { name: 'Red', class: 'bg-red-700', selectedClass: 'ring-gray-900'}
   ],
   sizes: [
     { name: 'XXS', inStock: false },
@@ -65,15 +65,14 @@ const product = {
     { name: '3XL', inStock: true },
   ],
   description:
-    'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
+    'Currently we only have a single model car Grille, But working on others.',
   highlights: [
-    'Hand cut and sewn locally',
-    'Dyed with our proprietary colors',
-    'Pre-washed & pre-shrunk',
-    'Ultra-soft 100% cotton',
+    'PLA+, ABS, or Carbon fiber filements',
+    'Can be printed in almost any color',
+    'may include mounting hardware'
   ],
   details:
-    'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
+    'Custom Designed Grille for 1970-1973 Ralley sport Camaros, Currently in development is a grille for the 70-73 Firebird.',
 }
 const reviews = { href: '#', average: 4, totalCount: 117 }
 
@@ -135,7 +134,7 @@ export default function Example() {
             <p className="text-3xl tracking-tight text-gray-900">{product.price}</p>
 
             {/* Reviews */}
-            <div className="mt-6">
+            {/* <div className="mt-6">
               <h3 className="sr-only">Reviews</h3>
               <div className="flex items-center">
                 <div className="flex items-center">
@@ -155,7 +154,7 @@ export default function Example() {
                   {reviews.totalCount} reviews
                 </a>
               </div>
-            </div>
+            </div> */}
 
             <form className="mt-10">
               {/* Colors */}
@@ -195,7 +194,7 @@ export default function Example() {
               </div>
 
               {/* Sizes */}
-              <div className="mt-10">
+              {/* <div className="mt-10">
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-medium text-gray-900">Size</h3>
                   <a href="#" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
@@ -254,14 +253,14 @@ export default function Example() {
                     ))}
                   </div>
                 </RadioGroup>
-              </div>
-
+              </div> */}
+{/* 
               <button
                 type="submit"
                 className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 Add to bag
-              </button>
+              </button> */}
             </form>
           </div>
 
@@ -297,6 +296,65 @@ export default function Example() {
               </div>
             </div>
           </div>
+        </div>
+        {/* Form */}
+        <h1 className='mx-auto max-w-2xl mb-4 text-xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-black'>Interest Form</h1>
+        <div className='mx-auto max-w-2xl px-4 pb-16 pt-10'>
+          <form className="w-full max-w-lg">
+            <div className="flex flex-wrap -mx-3 mb-6">
+              <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
+                  First Name
+                </label>
+                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="John" />
+              </div>
+              <div className="w-full md:w-1/2 px-3">
+                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                  Last Name
+                </label>
+                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" />
+              </div>
+            </div>
+            <div className="flex flex-wrap -mx-3 mb-6">
+              <div className="w-full px-3">
+                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                  Email
+                </label>
+                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" />
+              </div>
+            </div>
+            <div className="flex flex-wrap -mx-3 mb-2">
+              <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                  Country
+                </label>
+                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="country" type="text" placeholder="USA" />
+              </div>
+              <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                  Product
+                </label>
+                <div className="relative">
+                  <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="product">
+                    <option>Camaro RS Grille</option>
+                    <option>Firebird Grille</option>
+                    <option>Custom</option>
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-wrap -mx-3 mb-2">  
+              <div className="w-full px-3 mb-6 md:mb-0">
+                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                  Notes
+                </label>
+                <textarea className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="notes" type='text' placeholder="Questions?"/>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
