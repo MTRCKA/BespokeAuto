@@ -1,0 +1,7 @@
+type Interested @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  email: String
+  country: String
+  notes: String
+}

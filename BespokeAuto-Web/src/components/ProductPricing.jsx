@@ -21,6 +21,20 @@
 */
 import { useState } from 'react'
 import { RadioGroup } from '@headlessui/react'
+import { API } from "aws-amplify";
+import { createInterested } from '../graphql/mutations';
+
+const newInterested = await API.graphql({
+  query: createInterested,
+  variables: {
+      input: {
+  "name": "Lorem ipsum dolor sit amet",
+  "email": "Lorem ipsum dolor sit amet",
+  "country": "Lorem ipsum dolor sit amet",
+  "notes": "Lorem ipsum dolor sit amet"
+}
+  }
+});
 
 const product = {
   name: 'Custom Grilles',
@@ -83,6 +97,7 @@ function classNames(...classes) {
 export default function Example() {
   const [selectedColor, setSelectedColor] = useState(product.colors[0])
   const [selectedSize, setSelectedSize] = useState(product.sizes[2])
+  const [name, setName] = useState('')
 
   return (
     <div className="bg-white">
@@ -304,15 +319,9 @@ export default function Example() {
             <div className="flex flex-wrap -mx-3 mb-6">
               <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
-                  First Name
+                  Name
                 </label>
-                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="John" />
-              </div>
-              <div className="w-full md:w-1/2 px-3">
-                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                  Last Name
-                </label>
-                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" />
+                <input value={name} onChange={(e) => setName(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="name" type="text" placeholder="John" />
               </div>
             </div>
             <div className="flex flex-wrap -mx-3 mb-6">
@@ -354,6 +363,7 @@ export default function Example() {
                 <textarea className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="notes" type='text' placeholder="Questions?"/>
               </div>
             </div>
+            <button className="block uppercase tracking-wide text-gray-700 text-m font-bold mb-2">Submit</button>
           </form>
         </div>
       </div>
