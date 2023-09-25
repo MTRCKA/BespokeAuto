@@ -1,0 +1,244 @@
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
+
+type Interested @aws_api_key @aws_iam {
+  country: String
+  createdAt: AWSDateTime!
+  email: String
+  id: ID!
+  name: String
+  notes: String
+  product: String
+  updatedAt: AWSDateTime!
+}
+
+type ModelInterestedConnection @aws_api_key @aws_iam {
+  items: [Interested]!
+  nextToken: String
+}
+
+type Mutation {
+  createInterested(condition: ModelInterestedConditionInput, input: CreateInterestedInput!): Interested @aws_api_key @aws_iam
+  deleteInterested(condition: ModelInterestedConditionInput, input: DeleteInterestedInput!): Interested @aws_api_key @aws_iam
+  updateInterested(condition: ModelInterestedConditionInput, input: UpdateInterestedInput!): Interested @aws_api_key @aws_iam
+}
+
+type Query {
+  getInterested(id: ID!): Interested @aws_api_key @aws_iam
+  listInteresteds(filter: ModelInterestedFilterInput, limit: Int, nextToken: String): ModelInterestedConnection @aws_api_key @aws_iam
+}
+
+type Subscription {
+  onCreateInterested(filter: ModelSubscriptionInterestedFilterInput): Interested @aws_api_key @aws_iam @aws_subscribe(mutations : ["createInterested"])
+  onDeleteInterested(filter: ModelSubscriptionInterestedFilterInput): Interested @aws_api_key @aws_iam @aws_subscribe(mutations : ["deleteInterested"])
+  onUpdateInterested(filter: ModelSubscriptionInterestedFilterInput): Interested @aws_api_key @aws_iam @aws_subscribe(mutations : ["updateInterested"])
+}
+
+enum ModelAttributeTypes {
+  _null
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+input CreateInterestedInput {
+  country: String
+  email: String
+  id: ID
+  name: String
+  notes: String
+  product: String
+}
+
+input DeleteInterestedInput {
+  id: ID!
+}
+
+input ModelBooleanInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  eq: Boolean
+  ne: Boolean
+}
+
+input ModelFloatInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  between: [Float]
+  eq: Float
+  ge: Float
+  gt: Float
+  le: Float
+  lt: Float
+  ne: Float
+}
+
+input ModelIDInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  beginsWith: ID
+  between: [ID]
+  contains: ID
+  eq: ID
+  ge: ID
+  gt: ID
+  le: ID
+  lt: ID
+  ne: ID
+  notContains: ID
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  between: [Int]
+  eq: Int
+  ge: Int
+  gt: Int
+  le: Int
+  lt: Int
+  ne: Int
+}
+
+input ModelInterestedConditionInput {
+  and: [ModelInterestedConditionInput]
+  country: ModelStringInput
+  email: ModelStringInput
+  name: ModelStringInput
+  not: ModelInterestedConditionInput
+  notes: ModelStringInput
+  or: [ModelInterestedConditionInput]
+  product: ModelStringInput
+}
+
+input ModelInterestedFilterInput {
+  and: [ModelInterestedFilterInput]
+  country: ModelStringInput
+  email: ModelStringInput
+  id: ModelIDInput
+  name: ModelStringInput
+  not: ModelInterestedFilterInput
+  notes: ModelStringInput
+  or: [ModelInterestedFilterInput]
+  product: ModelStringInput
+}
+
+input ModelSizeInput {
+  between: [Int]
+  eq: Int
+  ge: Int
+  gt: Int
+  le: Int
+  lt: Int
+  ne: Int
+}
+
+input ModelStringInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  beginsWith: String
+  between: [String]
+  contains: String
+  eq: String
+  ge: String
+  gt: String
+  le: String
+  lt: String
+  ne: String
+  notContains: String
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionBooleanInput {
+  eq: Boolean
+  ne: Boolean
+}
+
+input ModelSubscriptionFloatInput {
+  between: [Float]
+  eq: Float
+  ge: Float
+  gt: Float
+  in: [Float]
+  le: Float
+  lt: Float
+  ne: Float
+  notIn: [Float]
+}
+
+input ModelSubscriptionIDInput {
+  beginsWith: ID
+  between: [ID]
+  contains: ID
+  eq: ID
+  ge: ID
+  gt: ID
+  in: [ID]
+  le: ID
+  lt: ID
+  ne: ID
+  notContains: ID
+  notIn: [ID]
+}
+
+input ModelSubscriptionIntInput {
+  between: [Int]
+  eq: Int
+  ge: Int
+  gt: Int
+  in: [Int]
+  le: Int
+  lt: Int
+  ne: Int
+  notIn: [Int]
+}
+
+input ModelSubscriptionInterestedFilterInput {
+  and: [ModelSubscriptionInterestedFilterInput]
+  country: ModelSubscriptionStringInput
+  email: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  name: ModelSubscriptionStringInput
+  notes: ModelSubscriptionStringInput
+  or: [ModelSubscriptionInterestedFilterInput]
+  product: ModelSubscriptionStringInput
+}
+
+input ModelSubscriptionStringInput {
+  beginsWith: String
+  between: [String]
+  contains: String
+  eq: String
+  ge: String
+  gt: String
+  in: [String]
+  le: String
+  lt: String
+  ne: String
+  notContains: String
+  notIn: [String]
+}
+
+input UpdateInterestedInput {
+  country: String
+  email: String
+  id: ID!
+  name: String
+  notes: String
+  product: String
+}
