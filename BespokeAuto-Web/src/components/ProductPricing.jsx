@@ -58,7 +58,7 @@ console.log(response)
 
 
 const product = {
-  name: 'Custom Grilles',
+  name: '70-73 RS Camaro Grille',
   price: '$350',
   href: '#',
   breadcrumbs: [
@@ -68,19 +68,35 @@ const product = {
   images: [
     {
       src: '/IMG_9309.jpg',
-      alt: 'Two each of gray, white, and black shirts laying flat.',
+      alt: 'Grilles',
     },
     {
       src: '/IMG_7706.PNG',
-      alt: 'Model wearing plain black basic tee.',
+      alt: 'Grille',
     },
     {
       src: '/IMG_9500.jpg',
-      alt: 'Model wearing plain gray basic tee.',
+      alt: 'Grille',
     },
     {
       src: '/IMG_9499.jpg',
-      alt: 'Model wearing plain white basic tee.',
+      alt: 'Grille',
+    },
+    {
+      src: '/IMG_9666 2.GIF',
+      alt: 'Grille',
+    },
+    {
+      src: '/IMG_9499.jpg',
+      alt: 'Grille',
+    },
+    {
+      src: '/IMG_9749.jpg',
+      alt: 'Grille',
+    },
+    {
+      src: '/IMG_9297.jpg',
+      alt: 'Grille',
     },
   ],
   colors: [
@@ -100,14 +116,14 @@ const product = {
     { name: '3XL', inStock: true },
   ],
   description:
-    'Currently we only have a single model car Grille, But working on others.',
+    "Welcome to Bespoke Auto - Where Your Ride Meets Innovation!",
   highlights: [
-    'PLA+, ABS, or Carbon fiber filements',
-    'Can be printed in almost any color',
-    'may include mounting hardware'
+    "Transform your car into a unique work of art. Our 3D printed parts allow you to create the custom look you've always dreamed of.",
+    'There is a great number of colour possibilities all the way from the classic black to a transparent red',
+    "Willing to work with you to get you exactly the part you want"
   ],
   details:
-    'Custom Designed Grille for 1970-1973 Ralley sport Camaros, Currently in development is a grille for the 70-73 Firebird.',
+    "At Bespoke Auto, we're passionate about pushing the boundaries of automotive customization. Our mission is to provide car enthusiasts like you with the finest, one-of-a-kind 3D printed car parts to elevate your vehicle's style. If you're Interested in a grille please fill out the form bellow and I will get back to you",
 }
 const reviews = { href: '#', average: 4, totalCount: 117 }
 
@@ -131,16 +147,16 @@ export default function Example() {
         <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
           <div className="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
             <img
-              src={product.images[0].src}
-              alt={product.images[0].alt}
+              src={product.images[6].src}
+              alt={product.images[6].alt}
               className="h-full w-full object-cover object-center"
             />
           </div>
           <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
             <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
               <img
-                src={product.images[1].src}
-                alt={product.images[1].alt}
+                src={product.images[7].src}
+                alt={product.images[7].alt}
                 className="h-full w-full object-cover object-center"
               />
             </div>
@@ -154,8 +170,8 @@ export default function Example() {
           </div>
           <div className="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
             <img
-              src={product.images[3].src}
-              alt={product.images[3].alt}
+              src={product.images[4].src}
+              alt={product.images[4].alt}
               className="h-full w-full object-cover object-center"
             />
           </div>
@@ -165,12 +181,22 @@ export default function Example() {
         <div className="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
           <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
             <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{product.name}</h1>
+            <h3 className="text-gray-500">(70-73 Firebird coming soon)</h3>
           </div>
 
           {/* Options */}
           <div className="mt-4 lg:row-span-3 lg:mt-0">
-            <h2 className="sr-only">Product information</h2>
+            <h2>Areo Grille, As shown above</h2>
+            <hr></hr>
+            <img
+                src={product.images[1].src}
+                alt={product.images[1].alt}
+                className="p-5"
+              />
             <p className="text-3xl tracking-tight text-gray-900">{product.price}</p>
+            <h2 className="pt-5">Custom Grille</h2>
+            <hr></hr>
+            <p className="mb-2 pt-5 text-3xl tracking-tight text-gray-900">$500</p>
 
             {/* Reviews */}
             {/* <div className="mt-6">
@@ -195,43 +221,6 @@ export default function Example() {
               </div>
             </div> */}
 
-            <form className="mt-10">
-              {/* Colors */}
-              <div>
-                <h3 className="text-sm font-medium text-gray-900">Color</h3>
-
-                <RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-4">
-                  <RadioGroup.Label className="sr-only">Choose a color</RadioGroup.Label>
-                  <div className="flex items-center space-x-3">
-                    {product.colors.map((color) => (
-                      <RadioGroup.Option
-                        key={color.name}
-                        value={color}
-                        className={({ active, checked }) =>
-                          classNames(
-                            color.selectedClass,
-                            active && checked ? 'ring ring-offset-1' : '',
-                            !active && checked ? 'ring-2' : '',
-                            'relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none'
-                          )
-                        }
-                      >
-                        <RadioGroup.Label as="span" className="sr-only">
-                          {color.name}
-                        </RadioGroup.Label>
-                        <span
-                          aria-hidden="true"
-                          className={classNames(
-                            color.class,
-                            'h-8 w-8 rounded-full border border-black border-opacity-10'
-                          )}
-                        />
-                      </RadioGroup.Option>
-                    ))}
-                  </div>
-                </RadioGroup>
-              </div>
-            </form>
           </div>
           <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
             {/* Description and details */}
@@ -244,7 +233,7 @@ export default function Example() {
             </div>
 
             <div className="mt-10">
-              <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
+              <h3 className="text-sm font-medium text-gray-900">Custom order Highlights</h3>
 
               <div className="mt-4">
                 <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
@@ -279,13 +268,13 @@ export default function Example() {
                   <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
                     First Name
                   </label>
-                  <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="John" />
+                  <input required={true} className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="John" />
                 </div>
                 <div className="w-full md:w-1/2 px-3">
                   <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                     Last Name
                   </label>
-                  <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" />
+                  <input required={true} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" />
                 </div>
               </div>
               <div className="flex flex-wrap -mx-3 mb-6">
@@ -293,7 +282,7 @@ export default function Example() {
                   <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                     Email
                   </label>
-                  <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" />
+                  <input required={true} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" />
                 </div>
               </div>
               <div className="flex flex-wrap -mx-3 mb-2">
@@ -301,7 +290,7 @@ export default function Example() {
                   <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                     Country
                   </label>
-                  <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="country" type="text" placeholder="USA" />
+                  <input required={true} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="country" type="text" placeholder="USA" />
                 </div>
                 <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                   <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
@@ -324,7 +313,7 @@ export default function Example() {
                   <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                     Notes
                   </label>
-                  <textarea className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="notes" type='text' placeholder="Questions?"/>
+                  <textarea required={true} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="notes" type='text' placeholder="Please tell me what you want"/>
                 </div>
               </div>
               <button>Sumbit</button>
