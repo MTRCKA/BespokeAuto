@@ -316,7 +316,7 @@ export default function Example() {
                   <textarea required={true} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="notes" type='text' placeholder="Please tell me what you want"/>
                 </div>
               </div>
-              <button>Sumbit</button>
+              <button>Submit</button>
             </form>
           ) : (
             <div className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" id='formAlert' role="alert">
