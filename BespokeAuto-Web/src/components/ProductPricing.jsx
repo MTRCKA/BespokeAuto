@@ -91,13 +91,17 @@ const product = {
       alt: 'Grille',
     },
     {
-      src: '/IMG_9749.jpg',
+      src: '/Teeth.jpg',
       alt: 'Grille',
     },
     {
       src: '/IMG_9297.jpg',
       alt: 'Grille',
     },
+    {
+      src:'/teeth2.jpg',
+      alt:'Teeth'
+    }
   ],
   colors: [
     { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
@@ -186,17 +190,22 @@ export default function Example() {
 
           {/* Options */}
           <div className="mt-4 lg:row-span-3 lg:mt-0">
-            <h2>Areo Grille, As shown above</h2>
+            <h2>Pre-Made Designs:</h2>
             <hr></hr>
             <img
                 src={product.images[1].src}
                 alt={product.images[1].alt}
                 className="p-5"
               />
+            <img
+                src={product.images[8].src}
+                alt={product.images[8].alt}
+                className="p-5"
+              />
             <p className="text-3xl tracking-tight text-gray-900">{product.price}</p>
             <h2 className="pt-5">Custom Grille</h2>
             <hr></hr>
-            <p className="mb-2 pt-5 text-3xl tracking-tight text-gray-900">$500</p>
+            <p className="mb-2 pt-5 text-3xl tracking-tight text-gray-900">Ask about pricing on complete bespoke options to fit your needs!</p>
 
             {/* Reviews */}
             {/* <div className="mt-6">
@@ -293,10 +302,10 @@ export default function Example() {
                   <input required={true} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="country" type="text" placeholder="USA" />
                 </div>
                 <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                  {/* <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                     Product
-                  </label>
-                  <div className="relative">
+                  </label> */}
+                  {/* <div className="relative">
                     <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="product">
                       <option>Camaro RS Grille</option>
                       <option>Firebird Grille</option>
@@ -305,7 +314,7 @@ export default function Example() {
                     <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                       <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="flex flex-wrap -mx-3 mb-2">  
@@ -316,7 +325,7 @@ export default function Example() {
                   <textarea required={true} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="notes" type='text' placeholder="Please tell me what you want"/>
                 </div>
               </div>
-              <button>Submit</button>
+              <button className="bg-red-800 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">Submit</button>
             </form>
           ) : (
             <div className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" id='formAlert' role="alert">
