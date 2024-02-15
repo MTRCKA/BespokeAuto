@@ -202,7 +202,7 @@ export default function Example() {
                 alt={product.images[8].alt}
                 className="p-5"
               />
-            <p className="text-3xl tracking-tight text-gray-900">{product.price}</p>
+            {/* <p className="text-3xl tracking-tight text-gray-900">{product.price}</p> */}
             <h2 className="pt-5">Custom Grille</h2>
             <hr></hr>
             <p className="mb-2 pt-5 text-3xl tracking-tight text-gray-900">Ask about pricing on complete bespoke options to fit your needs!</p>
